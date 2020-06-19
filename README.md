@@ -15,4 +15,4 @@ JavaScript
 The address for the final product can be found here:
 http://unn-w17004394.newnumyspace.co.uk/NeoN/home.html
 
-Mark Recieved:
+Mark Recieved: 60%
