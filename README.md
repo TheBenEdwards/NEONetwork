@@ -8,6 +8,7 @@ Ben Edwards
 
 Languages in this project include:
 HTML,
+CSS,
 PHP,
 SQL,
 JavaScript
