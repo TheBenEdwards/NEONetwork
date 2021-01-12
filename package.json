@@ -18,6 +18,7 @@
     "next": "*",
     "next-cookies": "*",
     "react": "*",
+    "react-datepicker": "*",
     "react-dom": "*",
     "react-modal": "*",
     "styled-components": "*",
