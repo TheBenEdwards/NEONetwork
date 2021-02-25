@@ -1,7 +1,9 @@
 const theme = {
-    black: '#333333',
-    blue: '#59ACD2',
-    white: '#ffffff',
+  ratio: 1.61803399,
+  white: '#ffffff',
+  black: '#333333',
+  blue: '#3792cb',
+
     green: '#9ed453',
     purple: '#8f3690',
     resourceGreen: '#86c080',
@@ -22,7 +24,6 @@ const theme = {
     containerPadding: '0 20px',
     maxWidth: '1240px',
     smallMaxWidth: '640px',
-    ratio: 1.61803399,
     PrimaryColour: '#9ed453',
     SecondaryColour: '#ffffff',
     TertiaryColour: '#333333',

@@ -1,61 +1,44 @@
 import React, { Component } from 'react'
-import { Container, Main, Footer, Title, Description, Grid, Card, Logo } from '../../styles/home'
+import { Container, Main, Footer, Title, Logo } from '../../styles/home'
+import HomeCard from './homeCard'
 
 class HomeComponent extends Component<any, any> {
     constructor(props) {
         super(props);
         this.state = {
-            loading: false,
+            textFields: [],
         }
+    }
+    componentDidMount() {
+        this.getHomeFields()
+    }
+    getHomeFields = () => {
+        this.setState({ textFields: [{name: 'The new way to communicate', text: 'hskrbvabivasouifv auwehfcsiyurvbeiu aouirvhseiuryvs azhkvbseruyvbweruiv'}] })
     }
     render() {
         return (
-                <Container>
-                    <Main>
-                        <Title>
-                            Learn <a href="https://nextjs.org">Next.js!</a>
-                        </Title>
+            <Container>
+                <Main>
+                    <Title>
+                        NEON
+                    </Title>
 
-                        <Description>
-                            Get started by editing <code>pages/index.js</code>
-                        </Description>
+                    {this.state.textFields.map(item => (
+                        <HomeCard item={item}/>
+                    ))}
+                </Main>
 
-                        <Grid>
-                            <Card href="https://nextjs.org/docs">
-                                <h3>Documentation &rarr;</h3>
-                                <p>Find in-depth information about Next.js features and API.</p>
-                            </Card>
-
-                            <Card href="https://nextjs.org/learn">
-                                <h3>Learn &rarr;</h3>
-                                <p>Learn about Next.js in an interactive course with quizzes!</p>
-                            </Card>
-
-                            <Card href="https://github.com/vercel/next.js/tree/master/examples">
-                                <h3>Examples &rarr;</h3>
-                                <p>Discover and deploy boilerplate example Next.js projects.</p>
-                            </Card>
-
-                            <Card href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app">
-                                <h3>Deploy &rarr;</h3>
-                                <p>
-                                    Instantly deploy your Next.js site to a public URL with Vercel.
-                                </p>
-                            </Card>
-                        </Grid>
-                    </Main>
-
-                    <Footer>
-                        <a
-                            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            Powered by{' '}
-                            <Logo><img src="/vercel.svg" alt="Vercel Logo"/></Logo>
-                        </a>
-                    </Footer>
-                </Container>
+                <Footer>
+                    <a
+                        href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Powered by{' '}
+                        <Logo><img src="/static/vercel.svg" alt="Vercel Logo" /></Logo>
+                    </a>
+                </Footer>
+            </Container>
         )
     }
 }

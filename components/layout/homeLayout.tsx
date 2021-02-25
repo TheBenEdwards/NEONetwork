@@ -12,7 +12,7 @@ class HomeLayout extends Component<any> {
             <React.Fragment>
                 <Head>
                     <title>NeoN - Home</title>
-                    <link rel="icon" href="../../public/favicon.ico" />
+                    <link rel="icon" href="/static/favicon.ico" />
                 </Head>
                 <HomeContainer small={this.props.small} push={this.props.push}>
                     {this.props.children}

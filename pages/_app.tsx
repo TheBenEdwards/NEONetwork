@@ -2,7 +2,7 @@ import * as React from 'react'
 import App, { Container } from 'next/app'
 import { ThemeProvider } from "styled-components";
 import Page from '../components/layout/page'
-import theme from '../styles/theme'
+import Theme from '../styles/theme'
 
 class MyApp extends App {
     static async getInitialProps({ Component, router, ctx }) {
@@ -23,7 +23,7 @@ class MyApp extends App {
 
         return (
             <>
-                <ThemeProvider theme={theme}>
+                <ThemeProvider theme={Theme}>
                     <Page>
                         <Component {...pageProps} />
                     </Page>
