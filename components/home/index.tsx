@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { Container, Main, Footer, Title, Logo } from '../../styles/home'
+import { H3 } from '../../styles/text'
+import { Col, Row } from '../../styles/layout/grid'
 import HomeCard from './homeCard'
 
 class HomeComponent extends Component<any, any> {
@@ -13,21 +15,19 @@ class HomeComponent extends Component<any, any> {
         this.getHomeFields()
     }
     getHomeFields = () => {
-        this.setState({ textFields: [{name: 'The new way to communicate', text: 'hskrbvabivasouifv auwehfcsiyurvbeiu aouirvhseiuryvs azhkvbseruyvbweruiv'}] })
+        this.setState({ textFields: [{ name: 'The new way to communicate', text: 'hskrbvabivasouifv auwehfcsiyurvbeiu aouirvhseiuryvs azhkvbseruyvbweruiv' }] })
     }
     render() {
         return (
             <Container>
                 <Main>
                     <Title>
-                        NEON
+                        <H3>NEON</H3>
                     </Title>
-
                     {this.state.textFields.map(item => (
-                        <HomeCard item={item}/>
+                        <HomeCard item={item} />
                     ))}
                 </Main>
-
                 <Footer>
                     <a
                         href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"

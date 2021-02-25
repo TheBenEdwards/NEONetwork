@@ -10,10 +10,6 @@ class HomeLayout extends Component<any> {
     render() {
         return (
             <React.Fragment>
-                <Head>
-                    <title>NeoN - Home</title>
-                    <link rel="icon" href="/static/favicon.ico" />
-                </Head>
                 <HomeContainer small={this.props.small} push={this.props.push}>
                     {this.props.children}
                 </HomeContainer>
