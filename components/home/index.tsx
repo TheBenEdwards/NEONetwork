@@ -25,8 +25,8 @@ class HomeComponent extends Component<any, any> {
                     <Title>
                         <H3>NEON</H3>
                     </Title>
-                    {this.state.textFields.map(item => (
-                        <HomeCard item={item} />
+                    {this.state.textFields.map((item, index) => (
+                        <HomeCard key={index} item={item} />
                     ))}
                 </Main>
                 <FooterComponent/>

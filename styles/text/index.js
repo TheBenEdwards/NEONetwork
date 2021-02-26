@@ -11,11 +11,11 @@ export const A = styled.a`
 `;
 
 export const H1 = styled.h1`
-
+    color: ${theme.black};
 `;
 
 export const H2 = styled.h2`
-
+    color: ${theme.black};
 `;
 
 export const H3 = styled.h3`
