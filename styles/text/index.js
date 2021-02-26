@@ -2,6 +2,14 @@ import styled from 'styled-components'
 import { RelSize } from '../mixins'
 import theme from '../theme'
 
+export const A = styled.a`
+    color: ${theme.black};
+    text-decoration: none;
+    :hover{
+        color: ${theme.blue}
+    }
+`;
+
 export const H1 = styled.h1`
 
 `;

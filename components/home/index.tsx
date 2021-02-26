@@ -3,6 +3,7 @@ import { Container, Main, Footer, Title, Logo } from '../../styles/home'
 import { H3 } from '../../styles/text'
 import { Col, Row } from '../../styles/layout/grid'
 import HomeCard from './homeCard'
+import FooterComponent from './footer'
 
 class HomeComponent extends Component<any, any> {
     constructor(props) {
@@ -28,16 +29,7 @@ class HomeComponent extends Component<any, any> {
                         <HomeCard item={item} />
                     ))}
                 </Main>
-                <Footer>
-                    <a
-                        href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Powered by{' '}
-                        <Logo><img src="/static/vercel.svg" alt="Vercel Logo" /></Logo>
-                    </a>
-                </Footer>
+                <FooterComponent/>
             </Container>
         )
     }

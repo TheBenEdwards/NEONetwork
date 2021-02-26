@@ -23,6 +23,7 @@ export const Title = styled.div`
     text-align: center;
     color: ${theme.white};
     background-color: ${theme.black};
+    transition: 0.25s;
     :hover {
         background-color: ${theme.blue};
     }
@@ -39,6 +40,7 @@ export const TextCard = styled.div`
     border: 1px solid;
     border-radius: ${RelSize(3, 2)};
     box-shadow: 5px 10px ${theme.black};
+    transition: 0.25s;
     :hover {
         border-color: ${theme.blue};
         box-shadow: 5px 10px ${theme.blue};
@@ -60,7 +62,9 @@ export const Footer = styled.footer`
     left: 0;
     bottom: 0;
     width: 100%;
-    color: white;
+    color: ${theme.white};;
+    background-color: ${theme.white};
+    opacity: 50%;
     text-align: center;
     padding: ${RelSize(3, 2)};
     img {
