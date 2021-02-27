@@ -1,13 +1,11 @@
 import React, { Component } from 'react'
 import { A } from '../../styles/text'
 import { Footer, Logo } from '../../styles/home'
+import { Props } from '../../_interfaces/component.homeFooter.interface'
 
-class FooterComponent extends Component<any, any> {
+class FooterComponent extends Component<Props> {
     constructor(props) {
         super(props);
-        this.state = {
-
-        }
     }
     render() {
         return (

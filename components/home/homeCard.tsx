@@ -1,22 +1,24 @@
 import React, { Component } from 'react'
-import { TextCard, TextCardField } from '../../styles/home'
+import { Card, Text } from '../../styles/home/card'
 import { H3, P } from '../../styles/text'
+import { HomeCardModel } from '../../_models/data.homeCard.model'
+import { Props, State } from '../../_interfaces/component.homeCard.interface'
 
-class HomeCard extends Component<any, any> {
+class HomeCard extends Component<Props, State> {
     constructor(props) {
         super(props);
         this.state = {
-            item: this.props.item || {}
+            ...new HomeCardModel(this.props)
         }
     }
     render() {
         return (
-            <TextCard>
+            <Card>
                 <H3 upper>{this.props.item.name}</H3>
-                <TextCardField>
+                <Text>
                     <P>{this.props.item.text}</P>
-                </TextCardField>
-            </TextCard>
+                </Text>
+            </Card>
         )
     }
 }

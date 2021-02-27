@@ -29,28 +29,6 @@ export const Title = styled.div`
     }
 `;
 
-export const TextCard = styled.div`
-    margin: ${RelSize(10, 2)};
-    padding: ${RelSize(3, 2)};
-    background-color: ${theme.white};
-    width: 100%;
-    text-align: center;
-    line-height: 1.5;
-    font-size: 1.5rem;
-    border: 1px solid;
-    border-radius: ${RelSize(3, 2)};
-    box-shadow: 5px 10px ${theme.black};
-    transition: 0.25s;
-    :hover {
-        border-color: ${theme.blue};
-        box-shadow: 5px 10px ${theme.blue};
-    }
-`;
-
-export const TextCardField = styled.div`
-    text-align: left;
-`;
-
 export const Logo = styled.div`
     img {
         height: 1em;
