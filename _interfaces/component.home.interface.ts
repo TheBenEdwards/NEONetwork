@@ -3,5 +3,7 @@ export interface Props {
 }
 
 export interface State {
-    textFields?: any;
+    textFields: any;
+    createModalOpen: boolean;
+    loginModalOpen: boolean;
 }

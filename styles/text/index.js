@@ -20,6 +20,9 @@ export const H2 = styled.h2`
 
 export const H3 = styled.h3`
     margin: 0;
+    @media all and (min-width: 1025px) {
+        padding: 0 ${RelSize(30, 16)};
+    }
     ${props => props.upper &&`
         text-transform: uppercase;
         letter-spacing: 3px;

@@ -7,7 +7,6 @@ export const Container = styled.div`
 `;
 
 export const Main = styled.main`
-    padding: 5rem 0;
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -23,7 +22,7 @@ export const Title = styled.div`
     text-align: center;
     color: ${theme.white};
     background-color: ${theme.black};
-    transition: 0.25s;
+    transition: all ease-in 0.2s;
     :hover {
         background-color: ${theme.blue};
     }

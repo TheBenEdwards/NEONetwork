@@ -39,6 +39,9 @@ export const Col = styled.div`
     @media all and (max-width: 1024px) {
         padding: 0 ${props => props.flush ? 0 : "10px"};
     }
+    ${props => props.center &&`
+        align-items: center;
+    `}
     ${props => props.justify &&`
         justify-content: ${props.justify};
     `}

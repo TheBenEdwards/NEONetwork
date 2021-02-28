@@ -13,7 +13,7 @@ export const Card = styled.div`
     border: 1px solid;
     border-radius: ${RelSize(3, 2)};
     box-shadow: 5px 10px ${theme.black};
-    transition: 0.25s;
+    transition: all ease-in 0.2s;
     :hover {
         border-color: ${theme.blue};
         box-shadow: 5px 10px ${theme.blue};
