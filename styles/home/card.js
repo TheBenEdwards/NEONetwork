@@ -14,12 +14,21 @@ export const Card = styled.div`
     border-radius: ${RelSize(3, 2)};
     box-shadow: 5px 10px ${theme.black};
     transition: all ease-in 0.2s;
+    overflow: hidden;
     :hover {
         border-color: ${theme.blue};
         box-shadow: 5px 10px ${theme.blue};
     }
 `;
 
+export const Header = styled.div`
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+`;
+
 export const Text = styled.div`
     text-align: left;
+    font-weight: lighter;
+    font-size: ${RelSize(8,10)};
 `;

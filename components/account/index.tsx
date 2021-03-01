@@ -14,10 +14,10 @@ class AccountComponent extends Component<any, any> {
         return (
             <AccountContainer>
                 <Row>
-                    <Col span={6} span768={12} base={5} center>
+                    <Col span={6} span700={12} base={5} center>
                         <StandardButton onClick={this.props.toggleCreateModal}>Create Account</StandardButton>
                     </Col>
-                    <Col span={6} span768={12} center>
+                    <Col span={6} span700={12} center>
                         <StandardButton onClick={this.props.toggleLoginModal}>Log In</StandardButton>
                     </Col>
                 </Row>

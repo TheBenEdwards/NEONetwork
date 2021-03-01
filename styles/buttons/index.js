@@ -36,6 +36,6 @@ const Base = styled.button`
 `;
 
 export const StandardButton = styled(Base)`
-    min-width: ${RelSize(20, 1)};
+    min-width: ${RelSize(17, 1)};
     border-radius: 10px;
 `;

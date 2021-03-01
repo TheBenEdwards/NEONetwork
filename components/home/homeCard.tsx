@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Card, Text } from '../../styles/home/card'
+import { Card, Header, Text } from '../../styles/home/card'
 import { H3, P } from '../../styles/text'
 import { HomeCardModel } from '../../_models/data.homeCard.model'
 import { Props, State } from '../../_interfaces/component.homeCard.interface'
@@ -14,9 +14,11 @@ class HomeCard extends Component<Props, State> {
     render() {
         return (
             <Card>
-                <H3 upper>{this.props.item.name}</H3>
+                <Header>
+                    <H3 upper>{this.props.item.name}</H3>
+                </Header>
                 <Text>
-                    <P>{this.props.item.text}</P>
+                    <P upper>{this.props.item.text}</P>
                 </Text>
             </Card>
         )
