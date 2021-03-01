@@ -19,6 +19,7 @@ export const H2 = styled.h2`
 `;
 
 export const H3 = styled.h3`
+    color: ${theme.black};
     margin: 0;
     @media all and (max-width: 700px) {
         ${props => props.upper &&`
@@ -29,9 +30,13 @@ export const H3 = styled.h3`
         text-transform: uppercase;
         letter-spacing: 3px;
     `}
+    ${props => props.title &&`
+        color: ${theme.white};
+    `}
 `;
 
 export const P = styled.p`
+    color: ${theme.black};
     font-weight: lighter;
     font-size: ${RelSize(8,10)};
     @media all and (max-width: 700px) {

@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import Modal from 'react-modal'
-import { Container, Main, Title } from '../../styles/home'
+import { Container, Main, Title, FlexContainer } from '../../styles/home'
 import { H3 } from '../../styles/text'
 import { ModalStyles } from '../../styles/modals'
+import { Col } from '../../styles/layout/grid'
 import AccountComponent from '../account'
 import HomeCard from './homeCard'
 import FooterComponent from './footer'
+import Panel from '../panel'
 import CreateAccountModal from '../modals/createAccountModal'
 import LoginAccountModal from '../modals/loginAccountModal'
 import { HomeModel } from '../../_models/data.home.model'
@@ -20,18 +22,14 @@ class HomeComponent extends Component<Props, State> {
     }
     componentDidMount() {
         this.getHomeFields()
+        this.getUpdates()
+        this.getLinks()
     }
     createAccount = () => {
         console.log('CREATE ACCOUNT')
     }
-    toggleCreateModal = () => {
-        this.setState({ createModalOpen: !this.state.createModalOpen })
-    }
     loginAccount = () => {
         console.log('LOGIN ACCOUNT')
-    }
-    toggleLoginModal = () => {
-        this.setState({ loginModalOpen: !this.state.loginModalOpen })
     }
     getHomeFields = () => {
         this.setState({
@@ -40,9 +38,27 @@ class HomeComponent extends Component<Props, State> {
                 { name: 'This is another test', text: 'hskrbvabivasouifv auwehfcsiyurvbeiu aouirvhseiuryvs azhkvbseruyvbweruiv' },
                 { name: 'I work at boxmodel - this is a fun little project', text: 'hskrbvabivasouifv auwehfcsiyurvbeiu aouirvhseiuryvs azhkvbseruyvbweruiv' },
                 { name: 'WORK', text: 'hskrbvabivasouifv auwehfcsiyurvbeiu aouirvhseiuryvs azhkvbseruyvbweruiv' },
+            ],
+            loading: false,
+        })
+    }
+    getUpdates = () => {
+        this.setState({
+            updateLog: [
+                {name: 'Version 2.0.0', date: '2021-07-23', text: 'Complete redesign of the portal. Changed from basic html to react. More cool features!', type: 'Major', href: 'https://github.com/TheBenEdwards'},
+                {name: 'Version 1.0.0', date: '2020-05-22', text: 'The final version of the portal first created for the dissertation project. Very basic but still had some cool features.', type: 'Release', href: 'https://github.com/TheBenEdwards'},
             ]
         })
     }
+    getLinks = () => {
+        this.setState({
+            links: [
+                {name: 'About the developers', text: 'Who developed this app?', href: 'https://github.com/TheBenEdwards'},
+            ]
+        })
+    }
+    toggleLoginModal = () => { this.setState({ loginModalOpen: !this.state.loginModalOpen }) }
+    toggleCreateModal = () => { this.setState({ createModalOpen: !this.state.createModalOpen }) }
     render() {
         return (
             <>
@@ -50,11 +66,29 @@ class HomeComponent extends Component<Props, State> {
                     <Main>
                         <AccountComponent toggleCreateModal={this.toggleCreateModal} toggleLoginModal={this.toggleLoginModal} />
                         <Title>
-                            <H3>NEON</H3>
+                            <H3 title>NEON</H3>
                         </Title>
-                        {this.state.textFields.map((item, index) => (
-                            <HomeCard key={index} item={item} />
-                        ))}
+                        <FlexContainer>
+                            <Col span={1} center>
+                                <Panel key={'nav'} name={'Navigation'} orientation={'left'} data={this.state.links}/>
+                            </Col>
+                            <Col grow span={6}>
+                                {!this.state.loading ?
+                                    <>
+                                        {this.state.textFields.map((item, index) => (
+                                            <HomeCard key={index} item={item} />
+                                        ))}
+                                    </>
+                                    :
+                                    <>
+                                        <HomeCard key={'LOADING'} item={{ name: 'LOADING', text: 'Please wait...' }} />
+                                    </>
+                                }
+                            </Col>
+                            <Col span={1} center>
+                                <Panel key={'updates'} name={'Update Log'} orientation={'right'} data={this.state.updateLog}/>
+                            </Col>
+                        </FlexContainer>
                     </Main>
                     <FooterComponent />
                 </Container>

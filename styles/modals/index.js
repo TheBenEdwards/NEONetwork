@@ -16,8 +16,7 @@ export const ModalStyles = {
         padding: RelSize(25, 16),
         position: 'relative',
         transform: 'translate(-50%, -50%)',
-        width: '90%',
-        width: '90vw',
+        width: '50%',
         maxHeight: '95vh'
     }
 };

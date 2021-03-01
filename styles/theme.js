@@ -3,6 +3,7 @@ const theme = {
   white: '#ffffff',
   black: '#333333',
   blue: '#3792cb',
+  grey: '#848484',
 
     green: '#9ed453',
     purple: '#8f3690',
@@ -10,7 +11,6 @@ const theme = {
     resourceBlue: '#C1DBED',
     orange: '#ff7b00',
     red: 'red',
-    grey: '#848484',
     deepSkyBlue: '#00bfff',
     outline: '#999999',
     valueBackground: '#d0d3d5',

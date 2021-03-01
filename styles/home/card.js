@@ -3,7 +3,7 @@ import { RelSize } from '../mixins'
 import theme from '../theme'
 
 export const Card = styled.div`
-    margin: ${RelSize(5, 2)};
+    margin-top: ${RelSize(5, 2)};
     padding: ${RelSize(3, 2)};
     background-color: ${theme.white};
     width: 100%;
@@ -18,6 +18,9 @@ export const Card = styled.div`
     :hover {
         border-color: ${theme.blue};
         box-shadow: 5px 10px ${theme.blue};
+    }
+    :last-child {
+        margin-bottom: ${RelSize(5, 2)};
     }
 `;
 

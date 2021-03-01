@@ -7,10 +7,8 @@ export const Container = styled.div`
 `;
 
 export const Main = styled.main`
-    flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 `;
 
@@ -26,6 +24,14 @@ export const Title = styled.div`
     :hover {
         background-color: ${theme.blue};
     }
+`;
+
+export const FlexContainer = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
 `;
 
 export const Logo = styled.div`
