@@ -3,7 +3,7 @@ import { RelSize } from '../mixins'
 import theme from '../theme'
 
 export const Card = styled.div`
-    margin-top: ${RelSize(5, 2)};
+    margin-bottom: ${RelSize(5, 2)};
     padding: ${RelSize(3, 2)};
     background-color: ${theme.white};
     width: 100%;

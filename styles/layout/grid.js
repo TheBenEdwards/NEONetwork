@@ -30,7 +30,7 @@ export const Col = styled.div`
     flex-direction: column;
     flex-grow: ${props => props.grow ? 1 : 0};
     flex-shrink: 0;
-    padding: ${RelSize(1,1)};
+    padding: 0px ${RelSize(1,1)} 0px ${RelSize(1,1)};
     margin-bottom: ${props => props.base ? RelSize(props.base, 16) : 0};
     margin-left: ${props => props.offsetLeft ? props.offsetLeft * 8.333333333333333 : "0"}%;
     margin-right: ${props => props.offsetRight ? props.offsetRight * 8.333333333333333 : "0"}%;

@@ -59,6 +59,9 @@ class HomeComponent extends Component<Props, State> {
     }
     toggleLoginModal = () => { this.setState({ loginModalOpen: !this.state.loginModalOpen }) }
     toggleCreateModal = () => { this.setState({ createModalOpen: !this.state.createModalOpen }) }
+    handlePanel = (PANEL) => {
+        console.log(PANEL)
+    }
     render() {
         return (
             <>
@@ -69,9 +72,7 @@ class HomeComponent extends Component<Props, State> {
                             <H3 title>NEON</H3>
                         </Title>
                         <FlexContainer>
-                            <Col span={1} center>
-                                <Panel key={'nav'} name={'Navigation'} orientation={'left'} data={this.state.links}/>
-                            </Col>
+                            <Panel key={'nav'} name={'Navigation'} orientation={'left'} data={this.state.links}/>
                             <Col grow span={6}>
                                 {!this.state.loading ?
                                     <>
@@ -85,9 +86,7 @@ class HomeComponent extends Component<Props, State> {
                                     </>
                                 }
                             </Col>
-                            <Col span={1} center>
-                                <Panel key={'updates'} name={'Update Log'} orientation={'right'} data={this.state.updateLog}/>
-                            </Col>
+                            <Panel key={'updates'} name={'Update Log'} orientation={'right'} data={this.state.updateLog}/>
                         </FlexContainer>
                     </Main>
                     <FooterComponent />

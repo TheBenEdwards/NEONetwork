@@ -4,6 +4,7 @@ export interface Props {
     name?: string;
     animate?: boolean;
     padding?: boolean;
+    handlePanel?: any;
 }
 
 export interface State {

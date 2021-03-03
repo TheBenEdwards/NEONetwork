@@ -5,9 +5,13 @@ import theme from '../theme'
 export const PanelMain = styled.div`
     position: relative;
     color: white;
-    height: 100%;    
+    height: ${RelSize(40, 1)};    
     display: flex;
     border-radius: 10px;
+    z-index: 1;
+    @media all and (max-width: 700px) {
+        display: none;
+    }
 `;
 
 export const PanelDiv = styled.div`

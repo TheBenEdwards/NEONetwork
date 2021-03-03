@@ -29,9 +29,9 @@ export const Title = styled.div`
 export const FlexContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
     justify-content: space-between;
     width: 100%;
+    padding: ${RelSize(3, 1)} 0px ${RelSize(3, 1)} 0px;
 `;
 
 export const Logo = styled.div`
