@@ -54,6 +54,9 @@ export const ModalContent = styled.div`
     ${props => props.large &&`
         min-height: ${RelSize(30, 1)}
     `}
+    ${props => props.center &&`
+        text-align: center;
+    `}
 `;
 
 export const ModalContentInner = styled.div`

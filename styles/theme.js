@@ -4,13 +4,15 @@ const theme = {
   black: '#333333',
   blue: '#3792cb',
   grey: '#848484',
+  green: '#3ACF10',
+  altGreen: '#289409',
+  red: '#DC143C',
 
-    green: '#9ed453',
     purple: '#8f3690',
     resourceGreen: '#86c080',
     resourceBlue: '#C1DBED',
     orange: '#ff7b00',
-    red: 'red',
+    
     deepSkyBlue: '#00bfff',
     outline: '#999999',
     valueBackground: '#d0d3d5',

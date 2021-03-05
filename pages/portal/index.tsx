@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import HomeLayout from '../../components/layout/homeLayout'
 import HomeComponent from '../../components/home'
 
-class Home extends Component<any, any> {
+class Portal extends Component<any, any> {
   constructor(props) {
     super(props);
     this.state = {
@@ -12,10 +12,10 @@ class Home extends Component<any, any> {
   render() {
     return (
       <HomeLayout>
-        <HomeComponent/>
+        TEST
       </HomeLayout>
     )
   }
 }
 
-export default Home;
+export default Portal;

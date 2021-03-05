@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { ModalHeader, ModalContent, ModalClose } from '../../styles/modals'
+import { ModalHeader, ModalContent, ModalClose, ModalHeaderDetails } from '../../styles/modals'
 import { H2 } from '../../styles/text'
 
 class CreateAccountModal extends Component<any, any> {
@@ -16,8 +16,8 @@ class CreateAccountModal extends Component<any, any> {
                 <ModalHeader>
                     <H2>Create an Account</H2>
                 </ModalHeader>
-                <ModalContent>
-
+                <ModalContent center>
+                    <ModalHeaderDetails>Create an account for NeoNetwork</ModalHeaderDetails>
                 </ModalContent>
             </>
         )

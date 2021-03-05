@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Modal from 'react-modal'
 import { Container, Main, Title, FlexContainer } from '../../styles/home'
-import { H3 } from '../../styles/text'
+import { H3Title } from '../../styles/text'
 import { ModalStyles } from '../../styles/modals'
 import { Col } from '../../styles/layout/grid'
 import AccountComponent from '../account'
@@ -69,7 +69,7 @@ class HomeComponent extends Component<Props, State> {
                     <Main>
                         <AccountComponent toggleCreateModal={this.toggleCreateModal} toggleLoginModal={this.toggleLoginModal} />
                         <Title>
-                            <H3 title>NEON</H3>
+                            <H3Title>NEON</H3Title>
                         </Title>
                         <FlexContainer>
                             <Panel key={'nav'} name={'Navigation'} orientation={'left'} data={this.state.links}/>

@@ -30,9 +30,10 @@ export const H3 = styled.h3`
         text-transform: uppercase;
         letter-spacing: 3px;
     `}
-    ${props => props.title &&`
-        color: ${theme.white};
-    `}
+`;
+
+export const H3Title = styled(H3)`
+    color: ${theme.white};
 `;
 
 export const P = styled.p`

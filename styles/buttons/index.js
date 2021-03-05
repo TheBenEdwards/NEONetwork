@@ -4,7 +4,7 @@ import theme from '../theme'
 
 const Base = styled.button`
     border: 0;
-    border-radius: 0;
+    border-radius: 10px;
     box-shadow: 0px 4px 4px 0 rgba(0, 0, 0, 0.1);
     color: ${theme.white};
     background-color: ${theme.black};
@@ -37,5 +37,12 @@ const Base = styled.button`
 
 export const StandardButton = styled(Base)`
     min-width: ${RelSize(17, 1)};
+`;
+
+export const SubmitButton = styled(Base)`
     border-radius: 10px;
+    background-color: ${theme.green};
+    &:hover{
+        background-color: ${theme.altGreen};
+    }
 `;
