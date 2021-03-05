@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import Head from 'next/head'
-import Router from 'next/router'
 import { HomeContainer } from '../../styles/layout/standardContain'
 
 class HomeLayout extends Component<any> {

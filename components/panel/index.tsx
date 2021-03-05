@@ -34,13 +34,13 @@ class Panel extends Component<Props, State> {
     render() {
         return (
             <PanelMain>
-                <PanelDiv onClick={this.handleClick} border={this.state.border} orientation={this.props.orientation}>
+                <PanelDiv onClick={this.handleClick} border={this.state.border} orientation={this.props.orientation} altcolour={this.props.altcolour}>
                     <PanelDesc orientation={this.props.orientation}>
                         {this.state.isOpen ? this.props.orientation === 'left' ? '⬆' : '⬆' : this.props.orientation === 'left' ? '⬇' : '⬇'} {this.props.name} {this.state.isOpen ? '(click to collapse)' : '(click to expand)'} {this.state.isOpen ? this.props.orientation === 'left' ? '⬆': '⬆' : this.props.orientation === 'left' ? '⬇' : '⬇' }
                     </PanelDesc>
                 </PanelDiv>
                 {this.state.isOpen &&
-                    <PanelContainer animate={this.state.animate} padding={this.state.padding} orientation={this.props.orientation} data={this.state.data}/>
+                    <PanelContainer animate={this.state.animate} padding={this.state.padding} orientation={this.props.orientation} data={this.state.data} altcolour={this.props.altcolour}/>
                 }
             </PanelMain>
         )

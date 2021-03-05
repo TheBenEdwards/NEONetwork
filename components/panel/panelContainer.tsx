@@ -9,7 +9,7 @@ class PanelContainer extends Component<Props> {
   }
   render() {
     return (
-      <PanelContainerDiv animate={this.props.animate} padding={this.props.padding} orientation={this.props.orientation}>
+      <PanelContainerDiv animate={this.props.animate} padding={this.props.padding} orientation={this.props.orientation} altcolour={this.props.altcolour}>
         <InternalPanelContainer animate={this.props.animate}>
           {this.props.data.map((item, index) => (
             <PanelItem key={index} item={item}></PanelItem>

@@ -5,6 +5,7 @@ export interface Props {
     animate?: boolean;
     padding?: boolean;
     handlePanel?: any;
+    altcolour?: boolean;
 }
 
 export interface State {

@@ -17,7 +17,7 @@ export const PanelMain = styled.div`
 export const PanelDiv = styled.div`
     position: relative;
     color: white;
-    background-color: ${theme.blue};
+    background-color: ${props => props.altcolour ? theme.grey : theme.blue};
     height: 100%;
     display: flex;
     align-items: center;
@@ -51,7 +51,7 @@ export const PanelDesc = styled.div`
 
 export const PanelContainerDiv = styled.div`
     position: absolute;
-    background-color: ${theme.blue};
+    background-color: ${props => props.altcolour ? theme.grey : theme.blue};
     padding-top: 20px;
     padding-bottom: 20px;
     height: 100%;

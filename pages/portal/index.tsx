@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import HomeLayout from '../../components/layout/homeLayout'
-import HomeComponent from '../../components/home'
+import PortalLayout from '../../components/layout/portalLayout'
+import PortalComponent from '../../components/portal'
 
 class Portal extends Component<any, any> {
   constructor(props) {
@@ -11,9 +11,9 @@ class Portal extends Component<any, any> {
   }
   render() {
     return (
-      <HomeLayout>
-        TEST
-      </HomeLayout>
+      <PortalLayout>
+        <PortalComponent/>
+      </PortalLayout>
     )
   }
 }
