@@ -29,11 +29,12 @@ class Panel extends Component<Props, State> {
                     })
                 }
                 setTimeout(() => this.setState({ animationInProgress: false }), 810)
-            })}
+            })
+        }
     }
     render() {
         return (
-            <PanelMain>
+            <PanelMain portal={this.props.portal} orientation={this.props.orientation}>
                 <PanelDiv onClick={this.handleClick} border={this.state.border} orientation={this.props.orientation} altcolour={this.props.altcolour}>
                     <PanelDesc orientation={this.props.orientation}>
                         {this.state.isOpen ? this.props.orientation === 'left' ? '⬆' : '⬆' : this.props.orientation === 'left' ? '⬇' : '⬇'} {this.props.name} {this.state.isOpen ? '(click to collapse)' : '(click to expand)'} {this.state.isOpen ? this.props.orientation === 'left' ? '⬆': '⬆' : this.props.orientation === 'left' ? '⬇' : '⬇' }

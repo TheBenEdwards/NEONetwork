@@ -21,9 +21,7 @@ class HomeComponent extends Component<Props, State> {
         }
     }
     componentDidMount() {
-        this.getHomeFields()
-        this.getUpdates()
-        this.getLinks()
+        this.setupHome()
     }
     createAccount = () => {
         console.log('CREATE ACCOUNT')
@@ -31,7 +29,7 @@ class HomeComponent extends Component<Props, State> {
     loginAccount = () => {
         console.log('LOGIN ACCOUNT')
     }
-    getHomeFields = () => {
+    setupHome = () => {
         this.setState({
             textFields: [
                 { name: 'The new way to communicate', text: 'hskrbvabivasouifv auwehfcsiyurvbeiu aouirvhseiuryvs azhkvbseruyvbweruiv' },
@@ -39,22 +37,14 @@ class HomeComponent extends Component<Props, State> {
                 { name: 'I work at boxmodel - this is a fun little project', text: 'hskrbvabivasouifv auwehfcsiyurvbeiu aouirvhseiuryvs azhkvbseruyvbweruiv' },
                 { name: 'WORK', text: 'hskrbvabivasouifv auwehfcsiyurvbeiu aouirvhseiuryvs azhkvbseruyvbweruiv' },
             ],
-            loading: false,
-        })
-    }
-    getUpdates = () => {
-        this.setState({
             updateLog: [
                 {name: 'Version 2.0.0', date: '2021-07-23', text: 'Complete redesign of the portal. Changed from basic html to react. More cool features!', type: 'Major', href: 'https://github.com/TheBenEdwards'},
                 {name: 'Version 1.0.0', date: '2020-05-22', text: 'The final version of the portal first created for the dissertation project. Very basic but still had some cool features.', type: 'Release', href: 'https://github.com/TheBenEdwards'},
-            ]
-        })
-    }
-    getLinks = () => {
-        this.setState({
+            ],
             links: [
                 {name: 'About the developers', text: 'Who developed this app?', href: 'https://github.com/TheBenEdwards'},
-            ]
+            ],
+            loading: false
         })
     }
     toggleLoginModal = () => { this.setState({ loginModalOpen: !this.state.loginModalOpen }) }
@@ -63,6 +53,7 @@ class HomeComponent extends Component<Props, State> {
         console.log(PANEL)
     }
     render() {
+        if (this.state.loading) return <></>
         return (
             <>
                 <Container>

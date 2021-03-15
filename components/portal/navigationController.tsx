@@ -15,7 +15,7 @@ class NavigationController extends Component<any, any> {
         return (
             <NavBar>
                 {this.state.navItems.map((item, index) => (
-                    <NavItem>{item.name}</NavItem>
+                    <NavItem key={index} >{item.name}</NavItem>
                 ))}
             </NavBar>
         )

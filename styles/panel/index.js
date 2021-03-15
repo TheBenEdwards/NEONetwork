@@ -12,6 +12,17 @@ export const PanelMain = styled.div`
     @media all and (max-width: 700px) {
         display: none;
     }
+    ${props => props.portal &&`
+        position: fixed;
+        margin-top: ${RelSize(4, 1)};
+        height: 85%;
+        ${props.orientation === 'left' &&`
+            left: ${RelSize(1, 1)};
+        `};
+        ${props.orientation === 'right' &&`
+            right: ${RelSize(1, 1)};
+        `};
+    `}
 `;
 
 export const PanelDiv = styled.div`

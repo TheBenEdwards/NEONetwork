@@ -13,7 +13,7 @@ class Home extends Component<Props> {
   render() {
     return (
       <HomeLayout>
-        <HomeComponent/>
+        <HomeComponent />
       </HomeLayout>
     )
   }

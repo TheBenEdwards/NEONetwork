@@ -10,26 +10,33 @@ class PortalComponent extends Component<any, any> {
         super(props);
         this.state = {
             navItems: [],
+            loading: true
         }
     }
     componentDidMount() {
-        this.getNavItems()
+        this.setupPortal()
     }
-    getNavItems = () => {
-        this.setState({ navItems: [{name: 'Profile'}, {name: 'Add to feed'}, {name: 'Links'}, {name: 'Messages'}, {name: 'Log Out'}] })
+    setupPortal = () => {
+        this.setState({ 
+            navItems: [
+                {name: 'Profile'}, {name: 'Add to feed'}, {name: 'Links'}, {name: 'Messages'}, {name: 'Log Out'}
+            ],
+            loading: false,
+        })
     }
     render() {
+        if (this.state.loading) return <></>
         return (
             <>
                 <Container>
                     <Main>
                         <NavigationController navItems={this.state.navItems}/>
                         <FlexContainer>
-                            <Panel key={'account'} name={'Account'} orientation={'left'} data={this.state.links} altcolour/>
+                            <Panel key={'account'} name={'Account'} orientation={'left'} data={this.state.links} altcolour portal/>
                             <Col grow span={6}>
 
                             </Col>
-                            <Panel key={'twitter'} name={'Twitter'} orientation={'right'} data={this.state.updateLog} altcolour/>
+                            <Panel key={'twitter'} name={'Twitter'} orientation={'right'} data={this.state.updateLog} altcolour portal/>
                         </FlexContainer>
                     </Main>
                 </Container>

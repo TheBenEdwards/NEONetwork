@@ -6,6 +6,7 @@ export interface Props {
     padding?: boolean;
     handlePanel?: any;
     altcolour?: boolean;
+    portal?: boolean;
 }
 
 export interface State {
