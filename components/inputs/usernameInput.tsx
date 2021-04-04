@@ -36,12 +36,9 @@ class UsernameInput extends Component<any, any> {
             <FormRow>
                 <FormRowInner>
                     <LabelFlex>
-                        <Label>Username</Label>
-                        {this.props.required && 
-                            <Label>Required</Label>
-                        }
+                        <Label uppercase={this.props.uppercase}>Username</Label>
                     </LabelFlex>
-                    <input type="username" placeholder={this.props.placeholder ? this.props.placeholder : "" } name={this.props.name} value={this.state.value} onFocus={this.setFocus} onBlur={this.resetFocus} onChange={(e) => this.handleChange(e)} readOnly={this.props.readonly ? true : false} />
+                    <input type="username" placeholder={this.props.placeholder ? this.props.placeholder : ""} name={this.props.name} value={this.state.value} onFocus={this.setFocus} onBlur={this.resetFocus} onChange={(e) => this.handleChange(e)} readOnly={this.props.readonly ? true : false} />
                 </FormRowInner>
                 {this.state.error &&
                     <ErrorLabel>{this.state.error}</ErrorLabel>

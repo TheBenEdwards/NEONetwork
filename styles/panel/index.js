@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import { RelSize } from '../mixins'
-import theme from '../theme'
+import { RelSize } from '../mixins';
 
 export const PanelMain = styled.div`
     position: relative;
@@ -28,7 +27,7 @@ export const PanelMain = styled.div`
 export const PanelDiv = styled.div`
     position: relative;
     color: white;
-    background-color: ${props => props.altcolour ? theme.grey : theme.blue};
+    background-color: ${props => props.altcolour ? props.theme.grey : props.theme.blue};
     height: 100%;
     display: flex;
     align-items: center;
@@ -62,7 +61,7 @@ export const PanelDesc = styled.div`
 
 export const PanelContainerDiv = styled.div`
     position: absolute;
-    background-color: ${props => props.altcolour ? theme.grey : theme.blue};
+    background-color: ${props => props.altcolour ? props.theme.grey : props.theme.blue};
     padding-top: 20px;
     padding-bottom: 20px;
     height: 100%;
@@ -96,7 +95,7 @@ export const InternalPanelContainer = styled.div`
     flex-direction: column;
     height: 100%;
     width: 100%;
-    background-color: ${theme.white};
+    background-color: ${props => props.theme.white};
     border-radius: 10px;
     opacity: ${props => props.animate ? 1 : 0};
     transition: opacity 0.4s;
@@ -106,24 +105,24 @@ export const InternalPanelContainer = styled.div`
 export const PanelItemContainer = styled.div`
     margin: 10px;
     padding: ${RelSize(1, 2)};
-    background-color: ${theme.white};
+    background-color: ${props => props.theme.white};
     line-height: 1.5;
     font-size: 1.5rem;
     border-radius: ${RelSize(3, 2)};
     border: 1px solid black;
     align-items: center;
     text-align: center;
-    color: ${theme.black};
+    color: ${props => props.theme.black};
     transition: all ease-in 0.2s;
     :hover {
         cursor: pointer;
-        border-color: ${theme.blue};
-        box-shadow: inset 0 0 10px ${theme.blue};
+        border-color: ${props => props.theme.blue};
+        box-shadow: inset 0 0 10px ${props => props.theme.blue};
     }
 `;
 
 export const PanelItemType = styled.div`
-    color: ${theme.grey};
+    color: ${props => props.theme.grey};
     font-size: 16px;
     font-weight: 200;
 `;
@@ -150,7 +149,7 @@ export const PanelItemDesc = styled.div`
 `;
 
 export const HelpText = styled.div`
-    color: ${theme.grey};
+    color: ${props => props.theme.grey};
     font-size: 12px;
     font-weight: 200;
 `;

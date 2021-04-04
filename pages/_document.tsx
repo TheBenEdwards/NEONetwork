@@ -1,6 +1,6 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document'
-import { ServerStyleSheet } from 'styled-components'
-import Meta from '../components/meta'
+import Document, { Html, Head, Main, NextScript } from 'next/document';
+import { ServerStyleSheet } from 'styled-components';
+import Meta from '../components/meta';
 
 export default class MyDocument extends Document<any> {
     static getInitialProps({ renderPage }) {

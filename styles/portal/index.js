@@ -1,6 +1,5 @@
-import styled from 'styled-components'
-import { RelSize } from '../mixins'
-import theme from '../theme'
+import styled from 'styled-components';
+import { RelSize } from '../mixins';
 
 export const Container = styled.div`
     padding: ${RelSize(1, 5)};
@@ -18,11 +17,11 @@ export const Title = styled.div`
     line-height: 1.15;
     font-size: 4rem;
     text-align: center;
-    color: ${theme.white};
-    background-color: ${theme.black};
+    color: ${props => props.theme.white};
+    background-color: ${props => props.theme.black};
     transition: all ease-in 0.2s;
     :hover {
-        background-color: ${theme.blue};
+        background-color: ${props => props.theme.blue};
     }
 `;
 
@@ -45,8 +44,8 @@ export const Footer = styled.footer`
     left: 0;
     bottom: 0;
     width: 100%;
-    color: ${theme.white};;
-    background-color: ${theme.white};
+    color: ${props => props.theme.white};;
+    background-color: ${props => props.theme.white};
     opacity: 50%;
     text-align: center;
     padding: ${RelSize(3, 2)};

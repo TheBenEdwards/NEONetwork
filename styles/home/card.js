@@ -1,27 +1,18 @@
-import styled from 'styled-components'
-import { RelSize } from '../mixins'
-import theme from '../theme'
+import styled from 'styled-components';
+import { RelSize } from '../mixins';
 
 export const Card = styled.div`
     margin-bottom: ${RelSize(5, 2)};
     padding: ${RelSize(3, 2)};
-    background-color: ${theme.white};
+    background-color: ${props => props.theme.ContainerBackground};
+    backdrop-filter: blur(5px);
     width: 100%;
     text-align: center;
     line-height: 1.5;
     font-size: 1.5rem;
-    border: 1px solid;
-    border-radius: ${RelSize(3, 2)};
-    box-shadow: 5px 10px ${theme.black};
+    box-shadow: -2px -2px 12px ${props => props.theme.ShadowTop}, 2px 2px 10px ${props => props.theme.ShadowBottom};
     transition: all ease-in 0.2s;
     overflow: hidden;
-    :hover {
-        border-color: ${theme.blue};
-        box-shadow: 5px 10px ${theme.blue};
-    }
-    :last-child {
-        margin-bottom: ${RelSize(5, 2)};
-    }
 `;
 
 export const Header = styled.div`

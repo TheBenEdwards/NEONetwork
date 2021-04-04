@@ -1,18 +1,18 @@
 import styled from 'styled-components';
-import theme from '../theme'
-import { RelSize } from '../mixins'
+import { RelSize } from '../mixins';
 
 export const FormRow = styled.div`
-    margin-bottom: ${props => props.flush ? 0 : props.small ? RelSize(15, 16) : RelSize(20, 16)};
     text-align: ${props => props.align ? props.align : "left"};
     ${props => props.above &&`
         z-index: 5;
     `};
     width: ${props => props.noWidth ? "auto" : "100%"};
+    min-height: ${RelSize(5, 1)};
     input:not([type='checkbox']), textarea {
-        background-color: ${theme.white};
-        border: 1px solid ${theme.outline};
-		border-radius: ${props => props.small ? RelSize(10, 12) : RelSize(10, 16)};
+        color: ${props => props.theme.white};
+        background-color: ${props => props.theme.black};
+        border-style: none;
+        border-bottom: 2px solid ${props => props.theme.blue};
         display: block;
         font-size: ${props => props.small ? "12px" : "16px"};
         padding: ${props => props.small ? RelSize(5, 12) : props.medium ? RelSize(10, 16) : RelSize(10, 16)};
@@ -22,8 +22,8 @@ export const FormRow = styled.div`
             outline: none;
         }
         &[readonly] {
-			background-color: ${theme.eventBackground};
-            color: ${theme.outline};
+			background-color: ${props => props.theme.eventBackground};
+            color: ${props => props.theme.outline};
         }
         &[type="date"]::-webkit-inner-spin-button {
             display: none;
@@ -93,30 +93,22 @@ export const LabelFlex = styled.div`
 `;
 
 export const Label = styled.label`
-    color: ${props => props.light ? theme.white : theme.black};
     display: block;
     font-size: ${props => props.small ? RelSize(12, 16) : RelSize(14, 16)};
     font-weight: 300;
     left: 0;
     line-height: ${RelSize(20, 16)};
-    margin: 0 0 ${props => props.isTitle ? RelSize(20, 14) : RelSize(5, 14)};
-    padding: 0;
+    position: relative;
+    text-align: left;
     ${props => props.help &&`
         padding-right: ${RelSize(20, 14)};
     `};
-    position: relative;
-    text-align: left;
     ${props => props.alternative &&`
-        color: ${theme.white};
+        color: ${props => props.theme.white};
         max-width: none;
         white-space: nowrap;
         width: auto;
     `};
-    a {
-        color: ${props => props.theme.PrimaryColour};
-        cursor: pointer;
-        font-weight: 700;
-    }
     ${props => props.full &&`
         form & {
             max-width: none !important ;
@@ -126,10 +118,18 @@ export const Label = styled.label`
     ${props => props.centre &&`
         text-align: center;
     `}
+    ${props => props.uppercase &&`
+        text-transform: uppercase;
+    `}
+    a {
+        color: ${props => props.theme.PrimaryColour};
+        cursor: pointer;
+        font-weight: 700;
+    }
 `;
 
 export const ErrorLabel = styled.label`
-    color: ${theme.red};
+    color: ${props => props.theme.red};
     display: block;
     font-size: ${RelSize(14, 16)};
     font-weight: 300;

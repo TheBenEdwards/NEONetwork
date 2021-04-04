@@ -1,6 +1,5 @@
-import styled from 'styled-components'
-import { RelSize } from '../mixins'
-import theme from '../theme'
+import styled from 'styled-components';
+import { RelSize } from '../mixins';
 
 export const ModalStyles = {
     overlay: {
@@ -8,7 +7,7 @@ export const ModalStyles = {
         zIndex: 99999
     },
     content : {
-        backgroundColor: theme.white,
+        backgroundColor: 'rgb(51, 51, 51)',
         border: '0',
         borderRadius: RelSize(24, 16),
         top: '50%',
@@ -24,7 +23,7 @@ export const ModalStyles = {
 export const ModalClose = styled.div`
     align-items: center;
     border-radius: 50%;
-    color: ${theme.black};
+    color: ${props => props.theme.black};
     display: flex;
     justify-content: center;
     height: ${RelSize(35, 16)};
@@ -39,7 +38,7 @@ export const ModalClose = styled.div`
         text-decoration: none;
     }
     :hover{
-        color: ${theme.blue};
+        color: ${props => props.theme.blue};
     }
 `;
 
@@ -47,6 +46,9 @@ export const ModalHeader = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    h2 {
+        text-transform: uppercase;
+    }
 `;
 
 export const ModalContent = styled.div`

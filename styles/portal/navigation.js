@@ -1,11 +1,10 @@
-import styled from 'styled-components'
-import { RelSize } from '../mixins'
-import theme from '../theme'
+import styled from 'styled-components';
+import { RelSize } from '../mixins';
 
 export const NavBar = styled.div`
     display: flex;
     position: fixed;
-    background-color: ${theme.blue};
+    background-color: ${props => props.theme.blue};
     width: 95%;
     border-radius: ${RelSize(1,1)};
     justify-content: center;
@@ -19,6 +18,6 @@ export const NavItem = styled.div`
     padding: ${RelSize(1,1)};
     :hover {
         color: white;
-        background-color: ${theme.black};
+        background-color: ${props => props.theme.black};
     }
 `;

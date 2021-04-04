@@ -6,8 +6,8 @@ const Meta = () => {
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <meta charSet="utf-8" />
             <link rel="icon" type="icon/ico" href="/static/favicon.ico" />
-            <link rel="icon" type="image/png" href="/static/logo.png" />
-            <title>NeoNetwork</title>
+            <link rel="icon" type="image/png" href="/static/icon/logo.png" />
+            <title>Portal Event Hub</title>
         </>
     )
 }

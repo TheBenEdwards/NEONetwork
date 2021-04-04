@@ -36,10 +36,7 @@ class PasswordInput extends Component<any, any> {
             <FormRow>
                 <FormRowInner>
                     <LabelFlex>
-                        <Label>Password</Label>
-                        {this.props.required && 
-                            <Label>Required</Label>
-                        }
+                        <Label uppercase={this.props.uppercase}>Password</Label>
                     </LabelFlex>
                     <input type="password" placeholder={this.props.placeholder ? this.props.placeholder : "" } name={this.props.name} value={this.state.value} onFocus={this.setFocus} onBlur={this.resetFocus} onChange={(e) => this.handleChange(e)} readOnly={this.props.readonly ? true : false} autoComplete="off" />
                 </FormRowInner>

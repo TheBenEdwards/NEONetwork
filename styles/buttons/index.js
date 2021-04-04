@@ -1,13 +1,12 @@
-import styled from 'styled-components'
-import { RelSize } from '../mixins'
-import theme from '../theme'
+import styled from 'styled-components';
+import { RelSize } from '../mixins';
 
 const Base = styled.button`
     border: 0;
     border-radius: 10px;
     box-shadow: 0px 4px 4px 0 rgba(0, 0, 0, 0.1);
-    color: ${theme.white};
-    background-color: ${theme.black};
+    color: ${props => props.theme.white};
+    background-color: ${props => props.theme.black};
     cursor: pointer;
     display: inline-block;
     font-size: ${props => props.small ? RelSize(14, 16) : RelSize(16, 16)};
@@ -26,7 +25,7 @@ const Base = styled.button`
         width: 100%;
     `}
     &:hover{
-        background-color: ${theme.blue};
+        background-color: ${props => props.theme.blue};
     }
     &:active, &:focus {
         border: 0;
@@ -40,9 +39,16 @@ export const StandardButton = styled(Base)`
 `;
 
 export const SubmitButton = styled(Base)`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     border-radius: 10px;
-    background-color: ${theme.green};
+    background-color: ${props => props.theme.green};
+    padding: ${RelSize(12, 14)} ${RelSize(22, 16)};
     &:hover{
-        background-color: ${theme.altGreen};
+        background-color: ${props => props.theme.altGreen};
+    }
+    div {
+        text-transform: uppercase;
     }
 `;
