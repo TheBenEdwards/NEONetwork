@@ -17,9 +17,9 @@ class PortalComponent extends Component<any, any> {
         this.setupPortal()
     }
     setupPortal = () => {
-        this.setState({ 
+        this.setState({
             navItems: [
-                {name: 'Profile'}, {name: 'Add to feed'}, {name: 'Links'}, {name: 'Messages'}, {name: 'Log Out'}
+                { name: 'Profile' }, { name: 'Add to feed' }, { name: 'Links' }, { name: 'Messages' }, { name: 'Log Out' }
             ],
             loading: false,
         })
@@ -30,13 +30,13 @@ class PortalComponent extends Component<any, any> {
             <>
                 <Container>
                     <Main>
-                        <NavigationController navItems={this.state.navItems}/>
+                        <NavigationController navItems={this.state.navItems} />
                         <FlexContainer>
-                            <Panel key={'account'} name={'Account'} orientation={'left'} data={this.state.links} altcolour portal/>
+                            <Panel key={'account'} name={'Account'} orientation={'left'} data={this.state.links} altcolour portal />
                             <Col grow span={6}>
 
                             </Col>
-                            <Panel key={'twitter'} name={'Twitter'} orientation={'right'} data={this.state.updateLog} altcolour portal/>
+                            <Panel key={'twitter'} name={'Twitter'} orientation={'right'} data={this.state.updateLog} altcolour portal />
                         </FlexContainer>
                     </Main>
                 </Container>
