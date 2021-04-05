@@ -11,6 +11,7 @@ const theme = {
   ShadowTop: 'rgba(0, 0, 0, 0.2)',
 	ShadowBottom: 'rgba(0, 0, 0, 0.2)',
   ContainerBackground: 'rgba(51, 51, 51, 0.8)',
+  PanelBackground: 'rgba(90, 90, 90, 0.6)',
 
   purple: '#8f3690',
   resourceGreen: '#86c080',

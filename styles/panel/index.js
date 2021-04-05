@@ -3,10 +3,9 @@ import { RelSize } from '../mixins';
 
 export const PanelMain = styled.div`
     position: relative;
-    color: white;
+    color: ${props => props.theme.white};
     height: ${RelSize(40, 1)};    
     display: flex;
-    border-radius: 10px;
     z-index: 1;
     @media all and (max-width: 700px) {
         display: none;
@@ -26,22 +25,16 @@ export const PanelMain = styled.div`
 
 export const PanelDiv = styled.div`
     position: relative;
-    color: white;
-    background-color: ${props => props.altcolour ? props.theme.grey : props.theme.blue};
+    color: ${props => props.theme.white};
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    border-radius: 10px;
-    ${props => (props.orientation === 'left' && props.border) &&`
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-    `}
-    ${props => (props.orientation === 'right' && props.border) &&`
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
-    `}
+    background-color: ${props => props.theme.PanelBackground};
+    backdrop-filter: blur(5px);
+    text-transform: uppercase;
+    box-shadow: -2px -2px 12px ${props => props.theme.ShadowTop}, 2px 2px 10px ${props => props.theme.ShadowBottom};
 `;
 
 export const PanelDesc = styled.div`
@@ -61,21 +54,17 @@ export const PanelDesc = styled.div`
 
 export const PanelContainerDiv = styled.div`
     position: absolute;
-    background-color: ${props => props.altcolour ? props.theme.grey : props.theme.blue};
+    background-color: ${props => props.theme.PanelBackground};
     padding-top: 20px;
     padding-bottom: 20px;
     height: 100%;
     transition: width 0.4s;
     transition-delay: ${props => props.animate ? 0 : '0.4s'};
     ${props => props.orientation === 'left' &&`
-        left: 40px;
-        border-top-right-radius: 10px;
-        border-bottom-right-radius: 10px;
+        left: 42px;
     `}
     ${props => props.orientation === 'right' &&`
-        right: 40px;
-        border-top-left-radius: 10px;
-        border-bottom-left-radius: 10px;
+        right: 42px;
     `}
     @media all and (min-width: 1025px) {
         width: ${props => props.animate ? RelSize(25, 1) : "0px"};
@@ -95,8 +84,7 @@ export const InternalPanelContainer = styled.div`
     flex-direction: column;
     height: 100%;
     width: 100%;
-    background-color: ${props => props.theme.white};
-    border-radius: 10px;
+    background-color: ${props => props.theme.black};
     opacity: ${props => props.animate ? 1 : 0};
     transition: opacity 0.4s;
     transition-delay: ${props => props.animate ? '0.4s' : 0};
@@ -108,7 +96,6 @@ export const PanelItemContainer = styled.div`
     background-color: ${props => props.theme.white};
     line-height: 1.5;
     font-size: 1.5rem;
-    border-radius: ${RelSize(3, 2)};
     border: 1px solid black;
     align-items: center;
     text-align: center;

@@ -11,11 +11,20 @@ class NavigationController extends Component<any, any> {
     componentDidUpdate(prevProps) {
         if (prevProps !== this.props) this.setState({ navItems: this.props.navItems })
     }
+    handleClick = (ITEM) => {
+        if (ITEM === 'toggleProfileModal') {
+            this.props.toggleProfileModal()
+        } else if (ITEM === 'WIP') {
+            console.log('WIP')
+        } else (
+            this.props.logout()
+        )
+    }
     render() {
         return (
             <NavBar>
                 {this.state.navItems.map((item, index) => (
-                    <NavItem key={index} >{item.name}</NavItem>
+                    <NavItem key={index} onClick={() => this.handleClick(item.function)}>{item.name}</NavItem>
                 ))}
             </NavBar>
         )

@@ -14,14 +14,18 @@ const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
         padding: 0;
         margin: 0;
-        color: ${props => props.theme.white};
-        background-color: ${props => props.theme.black};
+        height: 100%;
+        color: ${theme.white};
+        background-color: ${theme.black};
         font-family: Helvetica, sans-serif;
         -ms-overflow-style: none;
         scrollbar-width: none;
         ::-webkit-scrollbar {
             display: none;
         }
+        div#__next {
+        height: 100%;
+      }
     }
 `;
   
