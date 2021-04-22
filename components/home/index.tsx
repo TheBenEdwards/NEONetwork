@@ -6,8 +6,8 @@ import { Col } from '../../styles/layout/grid'
 import { Title } from '../../styles/account'
 import AccountComponent from '../account'
 import HomeCard from './homeCard'
-import Panel from '../panel'
 import CreateAccountModal from '../modals/createAccountModal'
+import HomeHelpModal from '../modals/homeHelpModal'
 import { HomeModel } from '../../_models/data.home.model'
 import { Props, State } from '../../_interfaces/component.home.interface'
 
@@ -35,7 +35,7 @@ class HomeComponent extends Component<Props, State> {
             loading: false
         })
     }
-    toggleLoginModal = () => { this.setState({ loginModalOpen: !this.state.loginModalOpen }) }
+    toggleHelpModal = () => { this.setState({ helpModalOpen: !this.state.helpModalOpen }) }
     toggleCreateModal = () => { this.setState({ createModalOpen: !this.state.createModalOpen }) }
     render() {
         if (this.state.loading) return <></>
@@ -61,7 +61,7 @@ class HomeComponent extends Component<Props, State> {
                                 }
                             </Col>
                         </CardContainer>
-                        <AccountComponent toggleCreateModal={this.toggleCreateModal} />
+                        <AccountComponent toggleCreateModal={this.toggleCreateModal} toggleHelpModal={this.toggleHelpModal}/>
                     </Main>
                 </Container>
                 <Modal
@@ -73,6 +73,16 @@ class HomeComponent extends Component<Props, State> {
                     shouldCloseOnOverlayClick={true}
                 >
                     <CreateAccountModal closeModal={this.toggleCreateModal} confirm={this.createAccount} />
+                </Modal>
+                <Modal
+                    isOpen={this.state.helpModalOpen}
+                    style={ModalStyles}
+                    ariaHideApp={false}
+                    onRequestClose={this.toggleHelpModal}
+                    shouldCloseOnEsc={true}
+                    shouldCloseOnOverlayClick={true}
+                >
+                    <HomeHelpModal closeModal={this.toggleHelpModal} />
                 </Modal>
             </>
         )

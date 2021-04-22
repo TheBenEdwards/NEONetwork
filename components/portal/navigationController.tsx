@@ -14,11 +14,16 @@ class NavigationController extends Component<any, any> {
     handleClick = (ITEM) => {
         if (ITEM === 'toggleProfileModal') {
             this.props.toggleProfileModal()
-        } else if (ITEM === 'WIP') {
-            console.log('WIP')
-        } else (
-            this.props.logout()
-        )
+        } else if (ITEM === 'toggleAddToFeedModal') {
+            this.props.toggleAddToFeedModal()
+        } else if (ITEM === 'toggleLinksModal') {
+            this.props.toggleLinksModal()
+        } else if (ITEM === 'toggleMessagesModal') {
+            this.props.toggleMessagesModal()
+        } else if (ITEM === 'toggleLogoutModal') {
+            console.log('LOGOUT MODAL')
+            this.props.toggleLogoutModal()
+        }
     }
     render() {
         return (

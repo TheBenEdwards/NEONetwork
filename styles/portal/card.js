@@ -7,7 +7,7 @@ export const Card = styled.div`
     align-items: center;
     width: 100%;
     margin: ${RelSize(1, 1)};
-    height: ${RelSize(5, 1)};
+    min-height: ${RelSize(5, 1)};
     box-shadow: -2px -2px 12px ${props => props.theme.ShadowTop}, 2px 2px 10px ${props => props.theme.ShadowBottom};
     cursor: pointer;
 `;
@@ -61,4 +61,8 @@ export const PostDate = styled.div`
     font-size: ${RelSize(3, 4)};
     text-transform: uppercase;
     font-weight: 200;
+`;
+
+export const PostData = styled.div`
+
 `;

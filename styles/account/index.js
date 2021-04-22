@@ -41,6 +41,7 @@ export const AccountForm = styled.div`
     border-left: 2px solid ${props => props.theme.white};
     padding: ${RelSize(1, 2)};
     box-shadow: -2px -2px 12px ${props => props.theme.ShadowTop}, 2px 2px 10px ${props => props.theme.ShadowBottom};
+    padding-bottom: ${RelSize(1, 1)};
 `;
 
 export const Subtitle = styled.div`

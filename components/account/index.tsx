@@ -72,16 +72,12 @@ class AccountComponent extends Component<any, any> {
                                 <SubmitButton full onClick={this.handleSubmit}><div>Continue</div><div>{'>'}</div></SubmitButton>
                             </Inputform>
                         </Form>
-                        <ButtonForm>
-                            <ForgotButton>Forgot Username</ForgotButton>
-                            <ForgotButton>Forgot Password</ForgotButton>
-                        </ButtonForm>
                     </AccountForm>
                     <CreateForm>
                         <Subtitle onClick={this.props.toggleCreateModal}>Create Account</Subtitle>
                     </CreateForm>
                     <HelpForm>
-                        <Subtitle small>Need Help?</Subtitle>
+                        <Subtitle onClick={this.props.toggleHelpModal} small>Need Help?</Subtitle>
                     </HelpForm>
                 </StickyContainer>
             </AccountContainer>

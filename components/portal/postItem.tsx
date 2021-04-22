@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import moment from 'moment';
-import { Card, Banner, DataContainer, PostTitle, PostType, PostName, PostDate } from '../../styles/portal/card'
+import { Card, Banner, DataContainer, PostTitle, PostType, PostName, PostDate, PostData } from '../../styles/portal/card'
 
 class PostItem extends Component<any, any> {
     constructor(props) {

@@ -3,6 +3,10 @@ import Router from 'next/router'
 import Modal from 'react-modal'
 import { ModalStyles } from '../../styles/modals'
 import ProfileModal from '../modals/manageProfileModal'
+import AddToFeedModal from '../modals/addToFeedModal'
+import LinksModal from '../modals/linksModal'
+import MessagesModal from '../modals/messagesModal'
+import LogoutModal from '../modals/logoutModal'
 import { Container, Main, FlexContainer } from '../../styles/portal'
 import Panel from '../panel'
 import NavigationController from './navigationController'
@@ -22,7 +26,7 @@ class PortalComponent extends Component<any, any> {
     setupPortal = () => {
         this.setState({
             navItems: [
-                { name: 'Profile', function: 'toggleProfileModal' }, { name: 'Add to feed' }, { name: 'Links' }, { name: 'Messages' }, { name: 'Log Out', function: 'logout' }
+                { name: 'Profile', function: 'toggleProfileModal' }, { name: 'Add to feed', function: 'toggleAddToFeedModal'}, { name: 'Links', function: 'toggleLinksModal' }, { name: 'Messages', function: 'toggleMessagesModal' }, { name: 'Log Out', function: 'toggleLogoutModal' }
             ],
             resultItems: [
                 { title: 'Post1', type: 'text' }, { title: 'Event1', type: 'event' }, { title: 'Profile1', type: 'profile' }
@@ -30,9 +34,16 @@ class PortalComponent extends Component<any, any> {
             loading: false,
         })
     }
-    toggleProfileModal = () => { console.log('here'),this.setState({ manageProfileModalOpen: !this.state.manageProfileModalOpen }) }
+    toggleProfileModal = () => { this.setState({ manageProfileModalOpen: !this.state.manageProfileModalOpen }) }
+    toggleAddToFeedModal = () => { this.setState({ addToFeedModalOpen: !this.state.addToFeedModalOpen }) }
+    toggleLinksModal = () => { this.setState({ linksModalOpen: !this.state.linksModalOpen }) }
+    toggleMessagesModal = () => { this.setState({ messagesModalOpen: !this.state.messagesModalOpen }) }
+    toggleLogoutModal = () => { this.setState({ logoutModalOpen: !this.state.logoutModalOpen }) }
     saveProfile = () => {
         console.log('save profile')
+    }
+    addToFeed = () => {
+        console.log('add to feed')
     }
     logout = () => {
         Router.push("/")
@@ -43,7 +54,14 @@ class PortalComponent extends Component<any, any> {
             <>
                 <Container>
                     <Main>
-                        <NavigationController navItems={this.state.navItems} toggleProfileModal={this.toggleProfileModal} logout={this.logout}/>
+                        <NavigationController 
+                            navItems={this.state.navItems} 
+                            toggleProfileModal={this.toggleProfileModal} 
+                            toggleAddToFeedModal={this.toggleAddToFeedModal} 
+                            toggleLinksModal={this.toggleLinksModal} 
+                            toggleMessagesModal={this.toggleMessagesModal} 
+                            toggleLogoutModal={this.toggleLogoutModal}
+                        />
                         <FlexContainer>
                             <Panel key={'account'} name={'Manage Account'} orientation={'left'} data={this.state.links} altcolour portal />
                             <PostContainer events={this.state.resultItems} />
@@ -60,6 +78,46 @@ class PortalComponent extends Component<any, any> {
                     shouldCloseOnOverlayClick={true}
                 >
                     <ProfileModal closeModal={this.toggleProfileModal} confirm={this.saveProfile} />
+                </Modal>
+                <Modal
+                    isOpen={this.state.addToFeedModalOpen}
+                    style={ModalStyles}
+                    ariaHideApp={false}
+                    onRequestClose={this.toggleAddToFeedModal}
+                    shouldCloseOnEsc={true}
+                    shouldCloseOnOverlayClick={true}
+                >
+                    <AddToFeedModal closeModal={this.toggleAddToFeedModal} confirm={this.addToFeed} />
+                </Modal>
+                <Modal
+                    isOpen={this.state.linksModalOpen}
+                    style={ModalStyles}
+                    ariaHideApp={false}
+                    onRequestClose={this.toggleLinksModal}
+                    shouldCloseOnEsc={true}
+                    shouldCloseOnOverlayClick={true}
+                >
+                    <LinksModal closeModal={this.toggleLinksModal} />
+                </Modal>
+                <Modal
+                    isOpen={this.state.messagesModalOpen}
+                    style={ModalStyles}
+                    ariaHideApp={false}
+                    onRequestClose={this.toggleMessagesModal}
+                    shouldCloseOnEsc={true}
+                    shouldCloseOnOverlayClick={true}
+                >
+                    <MessagesModal closeModal={this.toggleMessagesModal} />
+                </Modal>
+                <Modal
+                    isOpen={this.state.logoutModalOpen}
+                    style={ModalStyles}
+                    ariaHideApp={false}
+                    onRequestClose={this.toggleLogoutModal}
+                    shouldCloseOnEsc={true}
+                    shouldCloseOnOverlayClick={true}
+                >
+                    <LogoutModal closeModal={this.toggleLogoutModal} confirm={this.logout}/>
                 </Modal>
             </>
         )
