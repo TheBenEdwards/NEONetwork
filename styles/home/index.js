@@ -3,7 +3,7 @@ import { RelSize } from '../mixins';
 
 export const Container = styled.div`
     background-color: ${props => props.theme.black};
-    background-image: url('/static/backgrounds/water.jpeg');
+    /* background-image: url('/static/backgrounds/water.jpeg'); */
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: 100% 100%;
