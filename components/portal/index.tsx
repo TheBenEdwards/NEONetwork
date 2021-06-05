@@ -25,10 +25,10 @@ class PortalComponent extends Component<any, any> {
     }
     setupPortal = () => {
         this.setState({
-            navItems: [
-                { name: 'Profile', function: 'toggleProfileModal' }, { name: 'Add to feed', function: 'toggleAddToFeedModal'}, { name: 'Links', function: 'toggleLinksModal' }, { name: 'Messages', function: 'toggleMessagesModal' }, { name: 'Log Out', function: 'toggleLogoutModal' }
+            navItems: [ //Get from api to see accounts permissions on which buttons may be used
+                { name: 'Profile', function: 'toggleProfileModal' }, { name: 'Add to feed', function: 'toggleAddToFeedModal' }, { name: 'Links', function: 'toggleLinksModal' }, { name: 'Messages', function: 'toggleMessagesModal' }, { name: 'Log Out', function: 'toggleLogoutModal' }
             ],
-            resultItems: [
+            resultItems: [ //Get from api all posts relevant to this user
                 { title: 'Post1', type: 'text' }, { title: 'Event1', type: 'event' }, { title: 'Profile1', type: 'profile' }
             ],
             loading: false,
@@ -54,12 +54,12 @@ class PortalComponent extends Component<any, any> {
             <>
                 <Container>
                     <Main>
-                        <NavigationController 
-                            navItems={this.state.navItems} 
-                            toggleProfileModal={this.toggleProfileModal} 
-                            toggleAddToFeedModal={this.toggleAddToFeedModal} 
-                            toggleLinksModal={this.toggleLinksModal} 
-                            toggleMessagesModal={this.toggleMessagesModal} 
+                        <NavigationController
+                            navItems={this.state.navItems}
+                            toggleProfileModal={this.toggleProfileModal}
+                            toggleAddToFeedModal={this.toggleAddToFeedModal}
+                            toggleLinksModal={this.toggleLinksModal}
+                            toggleMessagesModal={this.toggleMessagesModal}
                             toggleLogoutModal={this.toggleLogoutModal}
                         />
                         <FlexContainer>
@@ -117,7 +117,7 @@ class PortalComponent extends Component<any, any> {
                     shouldCloseOnEsc={true}
                     shouldCloseOnOverlayClick={true}
                 >
-                    <LogoutModal closeModal={this.toggleLogoutModal} confirm={this.logout}/>
+                    <LogoutModal closeModal={this.toggleLogoutModal} confirm={this.logout} />
                 </Modal>
             </>
         )

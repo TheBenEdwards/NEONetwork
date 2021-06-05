@@ -12,8 +12,10 @@ export const NavBar = styled.div`
 export const NavItem = styled.div`
     cursor: pointer;
     text-transform: uppercase;
+    text-align: center;
     transition: all ease-in 0.2s;
-    padding: ${RelSize(1,1)} ${RelSize(4,1)};
+    flex: 1;
+    padding: ${RelSize(1,1)} 0;
     :hover {
         color: white;
         background-color: ${props => props.theme.black};

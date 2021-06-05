@@ -21,7 +21,6 @@ class NavigationController extends Component<any, any> {
         } else if (ITEM === 'toggleMessagesModal') {
             this.props.toggleMessagesModal()
         } else if (ITEM === 'toggleLogoutModal') {
-            console.log('LOGOUT MODAL')
             this.props.toggleLogoutModal()
         }
     }

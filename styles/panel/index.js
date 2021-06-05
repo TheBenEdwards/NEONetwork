@@ -7,9 +7,6 @@ export const PanelMain = styled.div`
     height: ${RelSize(40, 1)};    
     display: flex;
     z-index: 1;
-    @media all and (max-width: 700px) {
-        display: none;
-    }
     ${props => props.portal &&`
         position: fixed;
         margin-top: ${RelSize(4, 1)};
