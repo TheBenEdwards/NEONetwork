@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { FormRow, FormRowInner, LabelFlex, Label, ErrorLabel } from '../../styles/inputs'
 
-class PasswordInput extends Component<any, any> {
+class EmailInput extends Component<any, any> {
     constructor(props) {
         super(props);
         this.state = {
@@ -36,9 +36,9 @@ class PasswordInput extends Component<any, any> {
             <FormRow>
                 <FormRowInner>
                     <LabelFlex>
-                        <Label uppercase={this.props.uppercase}>{this.props.confirm ? 'Confirm Password' : 'Password'}</Label>
+                        <Label uppercase={this.props.uppercase}>Email</Label>
                     </LabelFlex>
-                    <input type="password" placeholder={this.props.placeholder ? this.props.placeholder : "" } name={this.props.name} value={this.state.value} onFocus={this.setFocus} onBlur={this.resetFocus} onChange={(e) => this.handleChange(e)} readOnly={this.props.readonly ? true : false} autoComplete="off" />
+                    <input type="text" placeholder={this.props.placeholder ? this.props.placeholder : ""} name={this.props.name} value={this.state.value} onFocus={this.setFocus} onBlur={this.resetFocus} onChange={(e) => this.handleChange(e)} readOnly={this.props.readonly ? true : false} />
                 </FormRowInner>
                 {this.state.error &&
                     <ErrorLabel>{this.state.error}</ErrorLabel>
@@ -48,4 +48,4 @@ class PasswordInput extends Component<any, any> {
     }
 }
 
-export default PasswordInput;
+export default EmailInput;
