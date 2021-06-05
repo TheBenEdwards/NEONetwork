@@ -34,3 +34,11 @@ export const TitleContainer = styled.div`
     width: ${RelSize(21, 1)};
     margin: ${RelSize(5, 2)};
 `;
+
+export const SideContainer = styled.div`
+    display: flex;
+    justify-content: space-between;
+    > div {
+        width: ${props => (1/(props.size+0.5))*100}%;
+    }
+`;
