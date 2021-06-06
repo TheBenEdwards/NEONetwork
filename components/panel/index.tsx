@@ -67,7 +67,7 @@ class Panel extends Component<Props, State> {
                     <PanelDesc orientation={this.props.orientation}>{this.props.name}</PanelDesc>
                 </PanelDiv>
                 {this.state.isOpen &&
-                    <PanelContainer animate={this.state.animate} padding={this.state.padding} orientation={this.props.orientation} data={this.state.data} altcolour={this.props.altcolour} />
+                    <PanelContainer animate={this.state.animate} padding={this.state.padding} orientation={this.props.orientation} data={this.state.data} altcolour={this.props.altcolour} panelType={this.props.panelType} twitterProfile={this.props.twitterProfile}/>
                 }
             </PanelMain>
         )

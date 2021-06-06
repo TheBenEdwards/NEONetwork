@@ -31,6 +31,7 @@ class PortalComponent extends Component<any, any> {
             resultItems: [ //Get from api all posts relevant to this user
                 { title: 'Post1', type: 'text' }, { title: 'Event1', type: 'event' }, { title: 'Profile1', type: 'profile' }
             ],
+            twitterProfile: "Edwards_Ben60", //Get twitter profile set up in manage account section
             loading: false,
         })
     }
@@ -63,9 +64,9 @@ class PortalComponent extends Component<any, any> {
                             toggleLogoutModal={this.toggleLogoutModal}
                         />
                         <FlexContainer>
-                            <Panel key={'account'} name={'Manage Account'} orientation={'left'} data={this.state.links} altcolour portal />
+                            <Panel key={'account'} name={'Manage Account'} orientation={'left'} data={this.state.links} panelType={1} altcolour portal />
                             <PostContainer events={this.state.resultItems} />
-                            <Panel key={'twitter'} name={'Twitter Feed'} orientation={'right'} data={this.state.updateLog} altcolour portal />
+                            <Panel key={'twitter'} name={'Twitter Feed'} orientation={'right'} data={this.state.updateLog} panelType={2} altcolour portal twitterProfile={this.state.twitterProfile}/>
                         </FlexContainer>
                     </Main>
                 </Container>

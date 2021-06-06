@@ -7,6 +7,8 @@ export interface Props {
     handlePanel?: any;
     altcolour?: boolean;
     portal?: boolean;
+    panelType?: number;
+    twitterProfile?: string;
 }
 
 export interface State {

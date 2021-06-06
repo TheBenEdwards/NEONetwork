@@ -24,7 +24,7 @@ class LogoutModal extends Component<any, any> {
                 <ModalContent>
                     <ModalHeaderDetails>Are you sure you want to logout?</ModalHeaderDetails>
                     <Form>
-                        <button onClick={this.props.confirm}>Logout</button>
+                        <button onClick={() => this.props.confirm()}>Logout</button>
                     </Form>
                 </ModalContent>
             </>

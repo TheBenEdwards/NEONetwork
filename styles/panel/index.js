@@ -137,3 +137,14 @@ export const HelpText = styled.div`
     font-size: 12px;
     font-weight: 200;
 `;
+
+export const TwitterFeedContainer = styled.div`
+    height: 100%;
+    > div {
+        height: 100%;
+    }
+`;
+
+export const TwitterAltContainer = styled.div`
+    padding: 10px;
+`;
