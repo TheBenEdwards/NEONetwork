@@ -25,13 +25,16 @@ class PortalComponent extends Component<any, any> {
     }
     setupPortal = () => {
         this.setState({
-            navItems: [ //Get from api to see accounts permissions on which buttons may be used
+            //Get from api to see accounts permissions on which buttons may be used
+            navItems: [ 
                 { name: 'Profile', function: 'toggleProfileModal' }, { name: 'Add to feed', function: 'toggleAddToFeedModal' }, { name: 'Links', function: 'toggleLinksModal' }, { name: 'Messages', function: 'toggleMessagesModal' }, { name: 'Log Out', function: 'toggleLogoutModal' }
             ],
-            resultItems: [ //Get from api all posts relevant to this user
+            //Get from api all the accountData including Profile and twitterProfile
+            accountData:  { twitterProfile: "Edwards_Ben60" },
+            //Get from api all posts relevant to this user
+            resultItems: [ 
                 { title: 'Post1', type: 'text' }, { title: 'Event1', type: 'event' }, { title: 'Profile1', type: 'profile' }
             ],
-            twitterProfile: "Edwards_Ben60", //Get twitter profile set up in manage account section
             loading: false,
         })
     }
@@ -64,9 +67,9 @@ class PortalComponent extends Component<any, any> {
                             toggleLogoutModal={this.toggleLogoutModal}
                         />
                         <FlexContainer>
-                            <Panel key={'account'} name={'Manage Account'} orientation={'left'} data={this.state.links} panelType={1} altcolour portal />
+                            <Panel key={'account'} name={'Manage Account'} orientation={'left'} panelType={1} data={this.state.accountData} altcolour portal />
                             <PostContainer events={this.state.resultItems} />
-                            <Panel key={'twitter'} name={'Twitter Feed'} orientation={'right'} data={this.state.updateLog} panelType={2} altcolour portal twitterProfile={this.state.twitterProfile}/>
+                            <Panel key={'twitter'} name={'Twitter Feed'} orientation={'right'} panelType={2} altcolour portal twitterProfile={this.state.accountData.twitterProfile}/>
                         </FlexContainer>
                     </Main>
                 </Container>
