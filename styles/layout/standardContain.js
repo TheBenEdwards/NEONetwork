@@ -12,3 +12,9 @@ export const PortalContainer = styled.div`
     width: 100%;
     height: 100%;
 `;
+
+export const LogoutContainer = styled.div`
+    margin: auto 0;
+    width: 100%;
+    height: 100%;
+`;

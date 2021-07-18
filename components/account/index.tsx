@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Router from 'next/router'
 import { H1 } from '../../styles/text'
 import { AccountContainer, StickyContainer, AccountTitle, AccountForm, Subtitle, Inputform, CreateForm, HelpForm } from '../../styles/account'
 import { Form } from '../../styles/inputs/form'
@@ -7,6 +6,7 @@ import { ValidateLogin } from '../../functions/validators'
 import UsernameInput from '../inputs/usernameInput'
 import PasswordInput from '../inputs/passwordInput'
 import { SubmitButton } from '../../styles/buttons'
+import { UniversalLogin } from '../../functions/helpers'
 
 class AccountComponent extends Component<any, any> {
     constructor(props) {
@@ -35,11 +35,12 @@ class AccountComponent extends Component<any, any> {
         }
     }
     authenticate = () => {
-        if (this.state.username.toLowerCase() === 'thebenedwards' && this.state.password === 'password1234') {
-            Router.push("/portal")
-        } else {
-            Router.push("/")
-        }
+        UniversalLogin(this.state)
+        // if (this.state.username.toLowerCase() === 'thebenedwards' && this.state.password === 'password1234') {
+        //     Router.push("/portal")
+        // } else {
+        //     Router.push("/")
+        // }
     }
     render() {
         return (

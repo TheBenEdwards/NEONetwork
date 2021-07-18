@@ -11,6 +11,7 @@ import { Container, Main, FlexContainer } from '../../styles/portal'
 import Panel from '../panel'
 import NavigationController from './navigationController'
 import PostContainer from './postContainer'
+import { UniversalLogout } from '../../functions/helpers'
 
 class PortalComponent extends Component<any, any> {
     constructor(props) {
@@ -50,7 +51,7 @@ class PortalComponent extends Component<any, any> {
         console.log('add to feed')
     }
     logout = () => {
-        Router.push("/")
+        UniversalLogout();
     }
     render() {
         if (this.state.loading) return <></>

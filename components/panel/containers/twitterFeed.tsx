@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterHashtagButton, TwitterMentionButton, TwitterTweetEmbed, TwitterMomentShare, TwitterDMButton, TwitterVideoEmbed, TwitterOnAirButton } from 'react-twitter-embed';
+import { Timeline } from 'react-twitter-widgets'
 import { TwitterFeedContainer, TwitterAltContainer } from '../../../styles/panel'
 import { H2, P } from '../../../styles/text'
 import { SubmitButton } from '../../../styles/buttons'
@@ -29,17 +29,21 @@ class TwitterFeed extends Component<any, any> {
         return (
             <TwitterFeedContainer>
                 {this.props.twitterProfile ?
-                    <TwitterTimelineEmbed
-                        sourceType="profile"
-                        screenName={this.props.twitterProfile}
-                        theme="dark"
-                        borderColor="#3792cb"
-                        noHeader
-                        noFooter
-                        noScrollbar
-                        options={{
-                            height: '100%',
+                    <Timeline
+                        dataSource={{
+                            sourceType: 'profile',
+                            screenName: 'Edwards_Ben60'
                         }}
+                        options={{ 
+                            theme: "dark",
+                            chrome: "noheader, nofooter" 
+                        }}
+                        // screenName={this.props.twitterProfile}
+                        // theme="dark"
+                        // borderColor="#3792cb"
+                        // noHeader
+                        // noFooter
+                        // noScrollbar
                     />
                     :
                     <TwitterAltContainer>

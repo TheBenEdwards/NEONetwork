@@ -140,6 +140,7 @@ export const HelpText = styled.div`
 
 export const TwitterFeedContainer = styled.div`
     height: 100%;
+    overflow: scroll;
     > div {
         height: 100%;
     }
