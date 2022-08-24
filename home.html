@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link href="stylesheet.css" rel="stylesheet" type="text/css" />
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+  <title>NeoN Home</title>
+</head>
+
+<body>
+
+  <script>
+    function openLoginForm() {
+      document.getElementById("loginForm").style.display = "block";
+    }
+    function closeLoginForm() {
+      document.getElementById("loginForm").style.display = "none";
+    }
+  </script>
+  <div class="login">
+    <button class="open-login" onclick="openLoginForm()">Login</button>
+    
+    <div class="form-r" id="loginForm">
+      <form method="post" action="loginProcess.php" class="login-container">
+        <h1>Login</h1>
+        
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" name="email" required>
+        
+        <label for="password"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="password" required>
+        
+        <button type="submit" class="btn" value="logon">Login</button>
+        <button type="button" class="btn cancel" onclick="closeLoginForm()">Close</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function openCreateForm() {
+      document.getElementById("createForm").style.display = "block";
+    }
+    function closeCreateForm() {
+      document.getElementById("createForm").style.display = "none";
+    }
+  </script>
+  <div class="create">
+    <button class="open-create" onclick="openCreateForm()">Create Account</button>
+    
+    <div class="form-l" id="createForm">
+      <form method="post" action="createProcess.php" class="create-container">
+        <h1>Create Account</h1>
+        
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" name="email" required>
+        
+        <label for="password"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="password" required>
+
+        <label for="passwordRepeat"><b>Repeat Password</b></label>
+        <input type="password" placeholder="Repeat Password" name="passwordRepeat" required>
+        
+        <button type="submit" class="btn" value="logon">Create Account</button>
+        <button type="button" class="btn cancel" onclick="closeCreateForm()">Close</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="parallax1">
+    
+    <div class="title">
+      <span class="border">NeoN</span>
+    </div>
+  
+  </div>
+
+  <div class="info">
+    <h3>The new way to communicate</h3>
+    <p>NeoN, combining the Japanese word <b>Neo</b>, meaning <b>new</b>, and N standing for <b>Network</b>, aims to provide a unique service to charities and organisations that other social networks dont provide. With a platform specifically designed for your organisation, there is no better place to organise events and plan for the future in order to help people in need. One of the many features, Geogoraphic tagging allows users to plan and organise events by showing exactly where the events will be held. A messaging system allowing users to have one-on-one discussions with other organisations is another key feature of the platform and will allow you to not only grow support for your organisation, but also for the vital events that your organisation organises in order to fight the growing issue of food poverty accross the world.</p>
+  </div>
+
+  <div class="parallax2"></div>
+
+  <div class="info">
+    <h3>About us</h3>
+    <p>At NeoN, we believe that nobody should ever have to suffer through poverty. However, asset management plays a massive part in how organisations can help people in need, and often organisations struggle by themselves to help people over a large area. Therefore, allowing organisations to work together can really help as it combines their efforts and their resources, and makes teamwork a critical focus of the platform itself. Using the most up-to-date research, we created a platform specifically for organisations to organise events and to assist each other in order to increase the effectivness of their relief efforts by combining their resources.</p>
+  </div>
+
+  <div class="parallax3"></div>
+
+  <div class="info">
+    <h3>How you can help</h3>
+    <p><b>How can you Help?</b> Often a phrase used by charities and other organisations to try to get the public to help them raise funds or awareness for a noble cause. In this case, we ask: how can your organisation help other organisations in fighting food poverty? The answer is simple: By joining NeoN you will be helping to further enlarge the network of charities across the country who aim for one ultimate goal: To see the end of poverty. Join us today by creating an account and start joining in with other organisations by creating events, joining in discussions and ultimately lending your resources to help or even have your own event. Thank you, from everyone at NeoN.</p>
+  </div>
+
+  <div class="parallax4"></div>
+  
+  <div class="info">
+    <h3>Make your community better</h3>
+    <p>NeoN is a tool designed to make the world we live in a better place. This platform was developed using research data from all over the globe. Farming systems in the US to phone systems in marginalised Australian communites were examined to find what organisations such as your own would be looking for in a platform where communication, planning and clarity are essential. If you are searching for all of this, dont hesitate to join us. It's Free!</p>
+  </div>
+
+  <div class="footer">
+  <p>Need Help? Contact: <a href="mailto:w17004394@northumbria.ac.uk">w17004394@northumbria.ac.uk</a>.</p>
+  </div>
+
+</body>
+</html>
