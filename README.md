@@ -14,7 +14,7 @@
   <h3 align="center">NEONetwork</h3>
 
   <p align="center">
-    Final Year Project at Northumbria University Newcastle
+    Final Year Project at Northumbria University Newcastle 
     <br />
     <a href="https://github.com/TheBenEdwards/NeoNetwork"><strong>Explore the code »</strong></a>
     <br />
